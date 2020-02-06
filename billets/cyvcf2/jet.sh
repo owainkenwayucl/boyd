@@ -6,9 +6,10 @@ repo=https://github.com/brentp/cyvcf2
 version=v0.11.5
 name=cyvcf2
 loc=`pwd`
+me=`whoami`
 
-mkdir -p /dev/shm/`whoami`/${name}
-temp_dir=`mktemp -d -p /dev/shm/`whoami`/${name}`
+mkdir -p /dev/shm/${me}/${name}
+temp_dir=`mktemp -d -p /dev/shm/${me}/${name}`
 
 # Create build environment
 cd $temp_dir
