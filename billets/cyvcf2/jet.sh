@@ -21,6 +21,10 @@ pip3 install numpy Cython
 
 git clone --recursive $repo
 cd cyvcf2
+cd htslib
+./configure --enable-libcurl
+
+cd ..
 
 python3 setup.py sdist bdist_wheel
 
