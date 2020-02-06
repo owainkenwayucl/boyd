@@ -22,6 +22,8 @@ pip3 install numpy Cython
 git clone --recursive $repo
 cd cyvcf2
 cd htslib
+autoheader
+autoconf
 ./configure --enable-libcurl
 
 cd ..
