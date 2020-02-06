@@ -25,6 +25,7 @@ cd htslib
 autoheader
 autoconf
 ./configure --enable-libcurl
+make
 
 cd ..
 
