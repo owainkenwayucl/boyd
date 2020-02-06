@@ -8,7 +8,7 @@ name=cyvcf2
 loc=`pwd`
 
 mkdir -p /dev/shm/`whoami`/${name}
-temp_dir=`mkdir -d -p /dev/shm/`whoami`/${name}`
+temp_dir=`mktemp -d -p /dev/shm/`whoami`/${name}`
 
 # Create build environment
 cd $temp_dir
