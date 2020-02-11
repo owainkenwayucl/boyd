@@ -8,6 +8,8 @@ name=cyvcf2
 loc=`pwd`
 me=`whoami`
 
+deps="numpy Cython"
+
 mkdir -p /dev/shm/${me}/${name}
 temp_dir=`mktemp -d -p /dev/shm/${me}/${name}`
 
@@ -17,7 +19,7 @@ virtualenv build_venv
 source build_venv/bin/activate
 
 # Dependencies for build
-pip3 install numpy Cython
+pip3 install ${deps}
 
 git clone --recursive $repo
 cd cyvcf2
