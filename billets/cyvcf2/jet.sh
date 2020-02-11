@@ -2,8 +2,6 @@
 
 set -e
 
-repo=https://github.com/brentp/cyvcf2
-version=v0.11.5
 name=cyvcf2
 loc=`pwd`
 me=`whoami`
@@ -21,8 +19,10 @@ source build_venv/bin/activate
 # Dependencies for build
 pip3 install ${deps}
 
-git clone --recursive $repo
-cd cyvcf2
+filename=$(pip3 download --no-binary :all: --no-deps $name | grep Saved | awk '{print $2}')
+IFS='/' read -ra dir_tmp <<< "$(tar zxvf ${filename} | tail -n 1)"
+cd ${dir_tmp[0]}
+
 cd htslib
 autoheader
 autoconf
