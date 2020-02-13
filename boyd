@@ -2,10 +2,12 @@
 
 set -e
 
+boydhome=$(dirname $(readlink $0))
+
 source shell/setup.sh
 
 if [ -n "$1" ]; then
-  bash billets/$1/jet.sh
+  bash ${boydhome}/billets/$1/jet.sh
 else
   echo "Usage: boyd <packagename>"
 fi
