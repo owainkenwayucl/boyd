@@ -2,7 +2,7 @@
 
 set -e
 
-boydhome=$(dirname $(readlink $0))
+boydhome=$(dirname $(readlink -f $0))
 
 source shell/setup.sh
 
