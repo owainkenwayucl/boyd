@@ -1,0 +1,11 @@
+#!/bin/env bash
+
+set -e
+
+source shell/setup.sh
+
+if [ -n "$1" ]; then
+  bash billets/$1/jet.sh
+else
+  echo "Usage: boyd <packagename>"
+fi
