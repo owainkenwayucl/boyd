@@ -1,2 +1,2 @@
 # boyd
-Boyd makes wheels
+Boyd cuts custom wheels for your Python Hot Rod.
