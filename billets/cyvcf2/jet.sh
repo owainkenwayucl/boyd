@@ -20,7 +20,6 @@ source build_venv/bin/activate
 
 # Dependencies for build
 pip3 install ${deps}
-export CYTHNONIZE=1
 
 git clone --recursive $repo
 cd cyvcf2
@@ -29,10 +28,11 @@ autoheader
 autoconf
 ./configure --enable-libcurl
 make
-python3 setup.py install sdist bdist_wheel
 
 cd ..
+export CYTHNONIZE=1
 
+python3 setup.py sdist 
 
 
 mkdir -p ${loc}/wheels
