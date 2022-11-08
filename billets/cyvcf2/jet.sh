@@ -17,7 +17,7 @@ temp_dir=`mktemp -d -p /dev/shm/${me}/${name}`
 cd $temp_dir
 virtualenv build_venv
 source build_venv/bin/activate
-
+pip3 install --upgrade pip
 # Dependencies for build
 pip3 install ${deps}
 
