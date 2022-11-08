@@ -19,7 +19,7 @@ virtualenv build_venv
 source build_venv/bin/activate
 pip3 install --upgrade pip
 # Dependencies for build
-pip3 install ${deps}
+#pip3 install ${deps}
 
 git clone --recursive $repo
 cd pdbfixer
