@@ -11,7 +11,7 @@ loc=`pwd`
 me=`whoami`
 
 deps="numpy"
-moduledeps="compilers/gnu/4.9.2 cuda/10.0.130/gnu-4.9.2 fftw/3.3.4-threads/gnu-4.9.2 flex/2.5.39 bison/3.0.4/gnu-4.9.2 ghostscript/9.19/gnu-4.9.2 texlive/2015 swig/3.0.5/gnu-4.9.2 qt/4.8.6/gnu-4.9.2 lua/5.3.1 require perl/5.22.0 graphviz/2.40.1 doxygen/1.8.14"
+moduledeps="compilers/gnu/4.9.2 cuda/10.0.130/gnu-4.9.2 fftw/3.3.4-threads/gnu-4.9.2 flex/2.5.39 bison/3.0.4/gnu-4.9.2 ghostscript/9.19/gnu-4.9.2 texlive/2015 swig/3.0.5/gnu-4.9.2 qt/4.8.6/gnu-4.9.2 lua/5.3.1 perl/5.22.0 graphviz/2.40.1 doxygen/1.8.14"
 
 mkdir -p /dev/shm/${me}/${name}
 temp_dir=`mktemp -d -p /dev/shm/${me}/${name}`
