@@ -20,6 +20,7 @@ source build_venv/bin/activate
 
 # Dependencies for build
 pip3 install ${deps}
+export CYTHNONIZE=1
 
 git clone --recursive $repo
 cd cyvcf2
@@ -31,7 +32,6 @@ make
 
 cd ..
 
-export CYTHNONIZE=1 
 
 python3 setup.py install sdist bdist_wheel
 
