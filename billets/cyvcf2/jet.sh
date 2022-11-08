@@ -3,7 +3,7 @@
 set -e
 
 repo=https://github.com/brentp/cyvcf2
-version=v0.30.18
+version=v${TARGET_VERSION:-0.30.18}
 name=cyvcf2
 loc=`pwd`
 me=`whoami`
