@@ -30,7 +30,7 @@ autoconf
 make
 
 cd ..
-export CYTHNONIZE=1
+export CYTHONIZE=1
 
 python3 setup.py bdist_wheel 
 
