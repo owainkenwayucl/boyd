@@ -16,7 +16,7 @@ moduledeps="compilers/gnu/4.9.2 cuda/10.0.130/gnu-4.9.2 fftw/3.3.4-threads/gnu-4
 mkdir -p /dev/shm/${me}/${name}
 temp_dir=`mktemp -d -p /dev/shm/${me}/${name}`
 
-module load moduledeps
+module load "${moduledeps}"
 
 # Create build environment
 cd $temp_dir
