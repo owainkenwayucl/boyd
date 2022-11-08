@@ -5,7 +5,7 @@ set -e
 source /etc/profile.d/modules.sh
 
 repo=https://github.com/openmm/openmm
-version=v${TARGET_VERSION:-7.7.0}
+version=${TARGET_VERSION:-7.7.0}
 name=pdbfixer
 loc=`pwd`
 me=`whoami`
