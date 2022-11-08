@@ -3,7 +3,7 @@
 set -e
 
 repo=https://github.com/brentp/cyvcf2
-version=v0.11.5
+version=v0.30.18
 name=cyvcf2
 loc=`pwd`
 me=`whoami`
@@ -23,7 +23,9 @@ pip3 install ${deps}
 
 git clone --recursive $repo
 cd cyvcf2
+git checkout $version
 cd htslib
+git submodule update --init --recursive
 autoheader
 autoconf
 ./configure --enable-libcurl
