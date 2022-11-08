@@ -32,7 +32,7 @@ make
 cd ..
 export CYTHNONIZE=1
 
-python3 setup.py sdist 
+python3 setup.py bdist_wheel 
 
 
 mkdir -p ${loc}/wheels
