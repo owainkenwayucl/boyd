@@ -29,11 +29,11 @@ autoheader
 autoconf
 ./configure --enable-libcurl
 make
+python3 setup.py install sdist bdist_wheel
 
 cd ..
 
 
-python3 setup.py install sdist bdist_wheel
 
 mkdir -p ${loc}/wheels
 cp dist/*.whl ${loc}/wheels
