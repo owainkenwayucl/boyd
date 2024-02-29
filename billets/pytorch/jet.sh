@@ -2,13 +2,13 @@
 
 set -e
 
-repo=https://github.com/openmm/pdbfixer
-version=v${TARGET_VERSION:-1.8.1}
-name=pdbfixer
+repo=https://github.com/pytorch/pytorch.git
+version=v${TARGET_VERSION:-2.2.2}
+name=pytorch
 loc=`pwd`
 me=`whoami`
 
-deps=""
+deps="numpy"
 
 mkdir -p /dev/shm/${me}/${name}
 temp_dir=`mktemp -d -p /dev/shm/${me}/${name}`
@@ -19,10 +19,14 @@ virtualenv build_venv
 source build_venv/bin/activate
 pip3 install --upgrade pip
 # Dependencies for build
-#pip3 install ${deps}
+pip3 install ${deps}
 
 git clone --recursive $repo
-cd pdbfixer
+cd ${name}
+
+git checkout ${version}
+git submodule sync
+git submodule update --init --recursive
 
 python3 setup.py bdist_wheel 
 
