@@ -3,7 +3,7 @@
 set -e
 
 repo=https://github.com/pytorch/pytorch.git
-version=v${TARGET_VERSION:-2.2.2}
+version=v${TARGET_VERSION:-2.2.0}
 name=pytorch
 loc=`pwd`
 me=`whoami`
