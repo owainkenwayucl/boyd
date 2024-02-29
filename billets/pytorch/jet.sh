@@ -19,16 +19,16 @@ virtualenv build_venv
 source build_venv/bin/activate
 pip3 install --upgrade pip
 
-# Dependencies for build
-pip3 install -r requirements.txt
-pip3 install ${deps}
-
 git clone --recursive $repo
 cd ${name}
 
 git checkout ${version}
 git submodule sync
 git submodule update --init --recursive
+
+# Dependencies for build
+pip3 install -r requirements.txt
+pip3 install ${deps}
 
 python3 setup.py bdist_wheel 
 
