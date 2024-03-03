@@ -19,12 +19,23 @@ virtualenv build_venv
 source build_venv/bin/activate
 pip3 install --upgrade pip
 
-git clone --recursive $repo
-cd ${name}
+if [ ! -e ${loc}/pytorch_${version}.tar ]
+then
+    echo " >>> No archive found, downloading from Git. <<< "
+    git clone --recursive $repo
+    cd ${name}
 
-git checkout ${version}
-git submodule sync
-git submodule update --init --recursive
+    git checkout ${version}
+    git submodule sync
+    git submodule update --init --recursive
+    cd ..
+    tar -cf ${loc}/pytorch_${version}.tar {name}
+else
+    echo " >>> Archive found. <<<"
+    tar xvf ${loc}/pytorch_${version}.tar
+fi
+
+cd ${name}
 
 # Dependencies for build
 pip3 install -r requirements.txt
