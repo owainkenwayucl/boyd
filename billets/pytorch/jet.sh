@@ -29,7 +29,7 @@ then
     git submodule sync
     git submodule update --init --recursive
     cd ..
-    tar -cf ${loc}/pytorch_${version}.tar {name}
+    tar -cf ${loc}/pytorch_${version}.tar ${name}
 else
     echo " >>> Archive found. <<<"
     tar xvf ${loc}/pytorch_${version}.tar
