@@ -10,9 +10,9 @@ me=`whoami`
 
 deps="numpy"
 
-if [ -e ${loc}/${name}_local.sh ]
+if [ -e ${loc}/billets/${name}/${name}_local.sh ]
 then
-    source ${loc}/${name}_local.sh
+    source ${loc}/billets/${name}/${name}_local.sh
 fi
 
 mkdir -p /dev/shm/${me}/${name}
