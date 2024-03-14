@@ -37,7 +37,7 @@ then
     tar -cf ${loc}/pytorch_${version}.tar ${name}
 else
     echo " >>> Archive found. <<<"
-    tar xvf ${loc}/pytorch_${version}.tar
+    tar xf ${loc}/pytorch_${version}.tar
 fi
 
 cd ${name}
