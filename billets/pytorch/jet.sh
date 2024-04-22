@@ -24,6 +24,12 @@ virtualenv build_venv
 source build_venv/bin/activate
 pip3 install --upgrade pip
 
+if [ -e ${loc}/billets/${name}/${name}_piplocal.sh ]
+then
+    source ${loc}/billets/${name}/${name}_piplocal.sh
+fi
+
+
 if [ ! -e ${loc}/pytorch_${version}.tar ]
 then
     echo " >>> No archive found, downloading from Git. <<< "
