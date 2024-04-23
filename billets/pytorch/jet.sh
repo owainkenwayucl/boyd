@@ -3,10 +3,12 @@
 set -e
 
 repo=https://github.com/pytorch/pytorch.git
-version=v${TARGET_VERSION:-2.2.2}
+nvversion=${TARGET_VERSION:-2.2.2}
+version=v${nvversion}
 name=pytorch
 loc=`pwd`
 me=`whoami`
+export PYTORCH_BUILD_VERSION=${nvversion}
 
 deps="numpy"
 
