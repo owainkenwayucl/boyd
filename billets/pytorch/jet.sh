@@ -9,7 +9,17 @@ name=pytorch
 loc=`pwd`
 me=`whoami`
 export PYTORCH_BUILD_VERSION=${nvversion}
-export PYTORCH_BUILD_NUMBER=2
+
+export PYTORCH_BUILD_NUMBER=0
+
+if  [ -e ${loc}/billets/${name}/${name}_build ]
+then
+  PYTORCH_BUILD_NUMBER=$(($(cat ${loc}/billets/${name}/${name}_build) + 1))
+  echo " >>> Setting build number to ${PYTORCH_BUILD_NUMBER} "
+fi
+
+echo ${PYTORCH_BUILD_NUMBER} > ${loc}/billets/${name}/${name}_build
+
 deps="numpy"
 
 if [ -e ${loc}/billets/${name}/${name}_local.sh ]
