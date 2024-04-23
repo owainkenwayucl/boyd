@@ -9,7 +9,7 @@ name=pytorch
 loc=`pwd`
 me=`whoami`
 export PYTORCH_BUILD_VERSION=${nvversion}
-export PYTORCH_BUILD_NUMVER=2
+export PYTORCH_BUILD_NUMBER=2
 deps="numpy"
 
 if [ -e ${loc}/billets/${name}/${name}_local.sh ]
