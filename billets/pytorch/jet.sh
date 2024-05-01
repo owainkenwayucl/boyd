@@ -20,6 +20,8 @@ fi
 
 echo ${PYTORCH_BUILD_NUMBER} > ${loc}/billets/${name}/${name}_build
 
+export PYTORCH_BUILD_NUMBER=${WHEEL_BUILD_RELEASE}:-${PYTORCH_BUILD_NUMBER}
+
 deps="numpy"
 
 if [ -e ${loc}/billets/${name}/${name}_local.sh ]
