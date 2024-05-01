@@ -51,6 +51,11 @@ else
     tar xf ${loc}/pytorch_${version}.tar
 fi
 
+cp ${loc}/billets/${name}/patches/*.patch .
+
+patch pytorch/aten/src/ATen/native/cuda/LinearAlgebra.cu < aten.patch
+patch pytorch/aten/src/ATen/native/sparse/cuda/cuSPARSELtOps.cpp < aten2.patch
+
 cd ${name}
 
 # Dependencies for build
