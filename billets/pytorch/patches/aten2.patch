@@ -1,0 +1,23 @@
+--- pytorch/aten/src/ATen/native/sparse/cuda/cuSPARSELtOps.cpp.orig	2024-05-01 16:21:12.872833857 +0100
++++ pytorch/aten/src/ATen/native/sparse/cuda/cuSPARSELtOps.cpp	2024-05-01 16:24:18.074339693 +0100
+@@ -140,17 +140,17 @@
+     case at::ScalarType::Half:
+         input_type = CUDA_R_16F;
+         output_type = CUDA_R_16F;
+-        compute_type = CUSPARSE_COMPUTE_16F;
++        compute_type = CUSPARSE_COMPUTE_32F; //fixed Owain Kenway, UCL
+         break;
+     case at::ScalarType::BFloat16:
+         input_type = CUDA_R_16BF;
+         output_type = CUDA_R_16BF;
+-        compute_type = CUSPARSE_COMPUTE_16F;
++        compute_type = CUSPARSE_COMPUTE_32F; //fixed Owain Kenway, UCL
+         break;
+     case at::ScalarType::Float:
+         input_type = CUDA_R_32F;
+         output_type = CUDA_R_32F;
+-        compute_type = CUSPARSE_COMPUTE_TF32;
++        compute_type = CUSPARSE_COMPUTE_32F; //fixed Owain Kenway, UCL
+         break;
+     default:
+         TORCH_CHECK(false, "Unsupported dtype for cuSPARSE compressed matrix multiplication.");

@@ -1,0 +1,10 @@
+--- pytorch/aten/src/ATen/native/cuda/LinearAlgebra.cu.orig	2024-05-01 16:06:11.113825880 +0100
++++ pytorch/aten/src/ATen/native/cuda/LinearAlgebra.cu	2024-05-01 15:54:01.446632587 +0100
+@@ -1,4 +1,7 @@
+ #define TORCH_ASSERT_NO_OPERATORS
++// fixed by Dr Owain Kenway
++#include <thrust/swap.h>
++
+ #include <ATen/Dispatch.h>
+ #include <ATen/native/TensorIterator.h>
+ #include <ATen/native/LinearAlgebra.h>
