@@ -3,7 +3,7 @@
 set -e
 
 repo=https://github.com/pytorch/pytorch.git
-nvversion=${TARGET_VERSION:-2.2.2}
+nvversion=${TARGET_VERSION:-2.3.0}
 version=v${nvversion}
 name=pytorch
 loc=`pwd`
@@ -43,7 +43,7 @@ then
     git checkout ${version}
     git submodule sync
     git submodule update --init --recursive
-    rm -rf third_party/opentelemetry-cpp/ # Fix for opentelementary license errors - remove post 2.2.x
+    #rm -rf third_party/opentelemetry-cpp/ # Fix for opentelementary license errors - remove post 2.2.x
     cd ..
     tar -cf ${loc}/pytorch_${version}.tar ${name}
 else
