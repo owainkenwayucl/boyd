@@ -1,0 +1,11 @@
+--- cupy_backends/cuda/api/_runtime_typedef.pxi.orig    2024-09-04 17:58:14.770732509 +0200
++++ cupy_backends/cuda/api/_runtime_typedef.pxi 2024-09-04 17:31:57.744353213 +0200
+@@ -140,7 +140,7 @@
+             void* hostPointer
+     ELIF CUPY_HIP_VERSION > 0:
+         ctypedef struct _PointerAttributes 'cudaPointerAttributes':
+-            int memoryType
++            int type
+             int device
+             void* devicePointer
+             void* hostPointer

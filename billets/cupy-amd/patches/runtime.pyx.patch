@@ -1,0 +1,19 @@
+--- cupy_backends/cuda/api/runtime.pyx.orig     2024-09-04 17:56:31.627204808 +0200
++++ cupy_backends/cuda/api/runtime.pyx  2024-09-04 17:51:59.408172866 +0200
+@@ -318,7 +318,6 @@
+         properties['clockInstructionRate'] = props.clockInstructionRate
+         properties['maxSharedMemoryPerMultiProcessor'] = (
+             props.maxSharedMemoryPerMultiProcessor)
+-        properties['gcnArch'] = props.gcnArch
+         properties['hdpMemFlushCntl'] = <intptr_t>(props.hdpMemFlushCntl)
+         properties['hdpRegFlushCntl'] = <intptr_t>(props.hdpRegFlushCntl)
+         properties['memPitch'] = props.memPitch
+@@ -725,7 +724,7 @@
+             attrs.device,
+             <intptr_t>attrs.devicePointer,
+             <intptr_t>attrs.hostPointer,
+-            attrs.memoryType)
++            attrs.type)
+     ELSE:  # for RTD
+         return None
+ 
