@@ -38,11 +38,13 @@ then
     cd ${name}
 
     git checkout ${version}
+    git submodule sync
+    git submodule update --init --recursive
     cd ..
-    tar -cf ${loc}/${name}_${version}.tar ${name}
+    tar -cvf ${loc}/${name}_${version}.tar ${name}
 else
     echo " >>> Archive found. <<<"
-    tar -xxf ${loc}/${name}_${version}.tar
+    tar -xvf ${loc}/${name}_${version}.tar
 fi
 
 
