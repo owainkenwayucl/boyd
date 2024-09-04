@@ -3,7 +3,7 @@
 set -e
 
 repo=https://github.com/cupy/cupy.git
-nvversion=${TARGET_VERSION:-2.3.0}
+nvversion=${TARGET_VERSION:-13.3.0}
 version=v${nvversion}
 name=cupy
 loc=`pwd`
