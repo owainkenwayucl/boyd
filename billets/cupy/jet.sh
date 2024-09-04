@@ -39,7 +39,7 @@ then
 
     git checkout ${version}
     cd ..
-    tar -cf $x{loc}/${name}_${version}.tar ${name}
+    tar -cf ${loc}/${name}_${version}.tar ${name}
 else
     echo " >>> Archive found. <<<"
     tar xf ${loc}/${name}_${version}.tar
