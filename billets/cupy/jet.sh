@@ -42,7 +42,7 @@ then
     tar -cf ${loc}/${name}_${version}.tar ${name}
 else
     echo " >>> Archive found. <<<"
-    tar xf ${loc}/${name}_${version}.tar
+    tar -xxf ${loc}/${name}_${version}.tar
 fi
 
 
