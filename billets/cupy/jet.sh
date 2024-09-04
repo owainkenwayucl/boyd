@@ -22,7 +22,7 @@ temp_dir=`mktemp -d -p /dev/shm/${me}/${name}`
 cd $temp_dir
 python3 -m venv build_venv
 source build_venv/bin/activate
-pip3 install --upgrade pip setuptools wheel
+pip3 install --upgrade pip wheel
 
 if [ -e ${loc}/billets/${name}/${name}_piplocal.sh ]
 then
