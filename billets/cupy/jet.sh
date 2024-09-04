@@ -52,10 +52,12 @@ export CUPY_INSTALL_USE_HIP=1
 
 cp ${loc}/billets/${name}/patches/*.patch .
 
+echo $(pwd)
+
 # Patch for ROCm 6+
 patch cupy_backends/cuda/api/runtime.pyx runtime.pyx.patch
 patch cupy_backends/hip/cupy_hip_runtime.h cupy_hip_runtime.h.patch
-path cupy_backends/cuda/api/_runtime_typedef.pxi _runtime_typedef.pxi.patch
+patch cupy_backends/cuda/api/_runtime_typedef.pxi _runtime_typedef.pxi.patch
 
 # Dependencies for build
 python3 setup.py bdist_wheel 
