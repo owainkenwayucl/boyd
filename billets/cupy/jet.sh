@@ -45,11 +45,12 @@ else
     tar xf ${loc}/${name}_${version}.tar
 fi
 
-cp ${loc}/billets/${name}/patches/*.patch .
 
 cd ${name}
 
 export CUPY_INSTALL_USE_HIP=1
+
+cp ${loc}/billets/${name}/patches/*.patch .
 
 # Patch for ROCm 6+
 patch cupy_backends/cuda/api/runtime.pyx runtime.pyx.patch
