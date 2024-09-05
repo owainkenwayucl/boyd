@@ -59,6 +59,7 @@ echo $(pwd)
 patch cupy_backends/cuda/api/runtime.pyx runtime.pyx.patch
 patch cupy_backends/hip/cupy_hip_runtime.h cupy_hip_runtime.h.patch
 patch cupy_backends/cuda/api/_runtime_typedef.pxi _runtime_typedef.pxi.patch
+patch cupy_backends/cuda/libs/_cnvrtc.pxi _cnvrtc.pxi.patch
 
 # Dependencies for build
 python3 setup.py bdist_wheel 

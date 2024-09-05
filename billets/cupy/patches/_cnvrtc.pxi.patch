@@ -1,0 +1,13 @@
+--- cupy_backends/cuda/libs/_cnvrtc.pxi.orig    2024-09-05 11:16:57.000000000 +0200
++++ cupy_backends/cuda/libs/_cnvrtc.pxi 2024-09-05 11:06:46.000000000 +0200
+@@ -139,5 +139,9 @@
+         elif runtime_version < 6_00_00000:
+             # ROCm 5.x
+             libname = 'libamdhip64.so.5'
++        elif runtime_version < 7_00_00000:
++            # ROCm 6.x
++            libname = 'libamdhip64.so.6 
++
+ 
+     return SoftLink(libname, prefix, mandatory=True)
+
