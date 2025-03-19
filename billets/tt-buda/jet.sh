@@ -24,7 +24,10 @@ pip3 install --upgrade pip
 git clone --recursive $repo
 cd ${name}
 git checkout $version
+git submodule sync
+git submodule update --init --recursive
 
+export BACKEND_ARCH_NAME=wormhole_b0
 python3 setup.py bdist_wheel 
 
 
