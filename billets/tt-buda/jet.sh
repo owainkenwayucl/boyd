@@ -27,6 +27,10 @@ git checkout $version
 git submodule sync
 git submodule update --init --recursive
 
+# attempt to unfuck boost...
+mkdir pybuda/csrc/boost
+ln -s /usr/include/boost1.78/boost/graph pybuda/csrc/boost/graph
+
 export BACKEND_ARCH_NAME=wormhole_b0
 python3 setup.py bdist_wheel 
 
