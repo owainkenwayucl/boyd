@@ -32,6 +32,8 @@ git submodule update --init --recursive
 mkdir pybuda/csrc/boost
 ln -s /usr/include/boost1.78/boost/graph pybuda/csrc/boost/graph
 ln -s /usr/include/boost1.78/boost/config.hpp pybuda/csrc/boost/config.hpp
+ln -s /usr/include/boost1.78/boost/config pybuda/csrc/boost/config
+
 export BACKEND_ARCH_NAME=wormhole_b0
 python3 setup.py bdist_wheel 
 
