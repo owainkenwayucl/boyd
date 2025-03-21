@@ -28,9 +28,10 @@ git submodule sync
 git submodule update --init --recursive
 
 # attempt to unfuck boost...
+# We can't include all of boost as that...breaks other things. Because it is boost.
 mkdir pybuda/csrc/boost
 ln -s /usr/include/boost1.78/boost/graph pybuda/csrc/boost/graph
-
+ln -s /usr/include/boost1.78/boost/config.hpp pybuda/csrc/boost/config.hpp
 export BACKEND_ARCH_NAME=wormhole_b0
 python3 setup.py bdist_wheel 
 
