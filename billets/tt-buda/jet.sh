@@ -32,6 +32,7 @@ git submodule update --init --recursive
 #mkdir pybuda/csrc/boost
 boyd_boost_home=${BOYD_BOOST_HOME:-"/usr/include/boost1.78/boost"}
 ln -s ${boyd_boost_home} pybuda/csrc/boost
+ln -s ${boyd_boost_home} third_party/budabackend/boost
 #ln -s ${boyd_boost_home}/graph pybuda/csrc/boost/graph
 #ln -s ${boyd_boost_home}/boost/config.hpp pybuda/csrc/boost/config.hpp
 #ln -s ${boyd_boost_home}/boost/config pybuda/csrc/boost/config
